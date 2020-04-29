@@ -1,0 +1,31 @@
+<!doctype html>
+
+<head>
+    <title>Hello from Flask edited</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+  <!-- HTML PAGE CONTENT -->
+  <!-- Jinja template syntax -->
+   {% if users %}
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+            </thead>
+            <tbody>
+                {% for dict in users %}
+                <tr>
+                    <td>{{ dict.name }}</td>
+                    <td>{{ dict.age }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+    <p>No users</p>
+    {% endif %}
+</body>
+
+</html>
