@@ -1,0 +1,29 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 30%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+input {
+  padding: 5px 0;
+  width: 200px;
+}
+#parent {
+  display: table;
+  width: 100%;
+  margin-top:10%;
+}
+#form_login {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
