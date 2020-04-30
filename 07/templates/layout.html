@@ -1,0 +1,32 @@
+<!doctype html>
+
+<head>
+   
+    <title> - My Webpage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    
+</head>
+
+<body>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/news">News</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+    <div id="content">
+      {%if welcome %}
+      <p>{{welcome }}</p>
+      {% endif %} 
+      {% block content %}
+      {% endblock %}    
+    </div>
+    <div id="footer">
+      {% block footer %}
+      some footer message
+      {% endblock %}
+      &copy; Copyright 2020
+      
+    </div>
+  </body>
+
+</html>
