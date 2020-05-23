@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block content %}
+<!-- Begin page content -->
+       
+      {% if employees %}           
+            <h1>Employees</h1>
+               <table>
+               <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Age</th>
+                  <th>Salary</th>
+                  <th>Designation</th>
+               </tr>
+               {% for e in employees %}
+                  <tr>
+                     <td>{{ e.FirstName }}</td>
+                     <td>{{ e.LastName }}</td>
+                     <td>{{ e.Age }}</td>
+                     <td>{{ e.Salary }}</td>
+                     <td>{{ e.Designation }}</td>
+                  </tr>
+               {% endfor %}
+               </table>
+   
+         {% endif %}
+      </div>
+   </main>
+ 
+{% endblock %} 
