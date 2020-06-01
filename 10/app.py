@@ -67,9 +67,9 @@ def edit_employee(id):
     mydb.commit()
     if mycursor.rowcount > 0:
        message = "Employee Records updated successfully."
+       flash(message)
     else:
-        message = None
-    flash(message)
+        message = None    
     return redirect(url_for('index'))
 
 def show_employee_edit_form(ID):
