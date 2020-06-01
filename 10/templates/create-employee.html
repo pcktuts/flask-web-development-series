@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block content %}
+<!-- Begin page content -->  
+ 
+   <h1>Create Employee</h1>
+   <form action="/employee/create" method="POST">
+    <div class="form-group">
+      <label for="FirstName">First Name</label>
+      <input type="text" class="form-control" name="FirstName" placeholder="Enter First Name" aria-describedby="">
+    </div>
+    <div class="form-group">
+      <label for="LastName">Last Name</label>
+      <input type="text" class="form-control" name="LastName" placeholder="Enter Last Name" aria-describedby="">
+    </div>
+    <div class="form-group">
+      <label for="Age">Age</label>
+      <input type="number" min="18" class="form-control" name="Age" placeholder="Enter Age" aria-describedby="">
+    </div>
+    <div class="form-group">
+      <label for="Salary">Salary</label>
+      <input type="number" min="5000" class="form-control" name="Salary" placeholder="Enter Salary" aria-describedby="">
+    </div>
+    <div class="form-group">
+      <label for="Designation">Designation</label>
+      <select class="form-control" name="Designation">
+        <option value="Junior Developer">Junior Developer</option>
+        <option value="Developer">Developer</option>
+        <option value="Manager">Manager</option>
+        <option value="Tester">Tester</option>
+      </select>    
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>  
+{% endblock %} 

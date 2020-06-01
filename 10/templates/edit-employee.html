@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+<!-- Begin page content -->  
+ {% if employee %}
+   <h1>Update Employee</h1>
+   <form action="/employee/edit/{{ employee.ID }}" method="POST">
+    <div class="form-group">
+      <label for="FirstName">First Name</label>
+      <input type="text" value="{{employee.FirstName}}" class="form-control" name="FirstName" placeholder="Enter First Name" aria-describedby="">
+    </div>
+    <div class="form-group">
+      <label for="LastName">Last Name</label>
+      <input type="text" value="{{employee.LastName}}" class="form-control" name="LastName" placeholder="Enter Last Name" aria-describedby="">
+    </div>
+    <div class="form-group">
+      <label for="Age">Age</label>
+      <input type="number" value="{{employee.Age}}" min="18" class="form-control" name="Age" placeholder="Enter Age" aria-describedby="">
+    </div>
+    <div class="form-group">
+      <label for="Salary">Salary</label>
+      <input type="number" value="{{employee.Salary}}" min="5000" class="form-control" name="Salary" placeholder="Enter Salary" aria-describedby="">
+    </div>
+    <div class="form-group">
+      <label for="Designation">Designation</label>
+      <select class="form-control" name="Designation">
+        <option value="Junior Developer" {% if employee.Designation=="Junior Developer" %} selected{% endif %} >Junior Developer</option>
+        <option value="Developer" {% if employee.Designation== "Developer" %} selected{% endif %} >Developer</option>
+        <option value="Manager" {% if employee.Designation=="Manager" %} selected{% endif %} >Manager</option>
+        <option value="Tester" {% if employee.Designation=="Tester" %} selected{% endif %} >Tester</option>
+      </select>    
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>  
+  {% endif %}
+{% endblock %} 
